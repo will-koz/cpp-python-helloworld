@@ -2,6 +2,4 @@
 
 import server
 
-print(module.helloworld())
-
 server.start_server()

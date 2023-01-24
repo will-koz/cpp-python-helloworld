@@ -3,10 +3,12 @@
 
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
+import module
+
 class Server (BaseHTTPRequestHandler):
 	def do_GET (self):
 		response_code = 200 # No errors. Everything served correctly
-		response_content = b"Hello World"
+		response_content = bytes(module.helloworld(), encoding = "utf-8")
 
 		self.send_response(response_code)
 		self.end_headers()
